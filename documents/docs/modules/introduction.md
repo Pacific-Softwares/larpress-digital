@@ -17,7 +17,7 @@ Modules in LarPress are:
 A typical module structure:
 
 ```
-modules/Blog/
+{module-slug}/
 ├── Config/
 │   └── config.php
 ├── Database/

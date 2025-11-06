@@ -71,8 +71,8 @@ export default defineConfig({
         {
           text: 'System',
           items: [
-            { text: 'Modules', link: '/admin-panel/modules' },
-            { text: 'Themes', link: '/admin-panel/themes' },
+            { text: 'Modules', link: '/modules/introduction' },
+            { text: 'Themes', link: '/themes/introduction' },
             { text: 'Languages', link: '/admin-panel/languages' },
             { text: 'Settings', link: '/admin-panel/settings' },
             { text: 'Backups', link: '/admin-panel/backups' },
