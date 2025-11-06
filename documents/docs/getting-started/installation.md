@@ -4,12 +4,96 @@ This guide will walk you through installing LarPress on your server.
 
 ## Installation Methods
 
-LarPress offers two installation methods:
+LarPress offers multiple installation methods:
 
-1. **Web Installer** (Recommended) - User-friendly GUI installer
-2. **Manual Installation** - For advanced users and custom setups
+1. **Via File Manager (cPanel/Plesk/DirectAdmin)** – Upload ZIP, extract, then run installer
+2. **Via FileZilla (FTP/SFTP)** – Upload ZIP, extract on server, then run installer
+3. **Web Installer from Git/SSH** – Clone/checkout then run installer
+4. **Manual Installation** – For advanced users and custom setups
 
-## Method 1: Web Installer (Recommended)
+---
+
+## Method A: File Manager (cPanel/Plesk/DirectAdmin)
+
+Use this when you have a hosting control panel with a browser File Manager.
+
+1) Upload package
+- Download the LarPress release ZIP.
+- In your panel, open File Manager and navigate to your target directory:
+  - Root domain: `public_html/`
+  - Subdomain/addon: that site’s document root
+- Upload the ZIP to the target directory.
+
+2) Extract files
+- Use “Extract” in File Manager to unzip the archive into the target directory.
+
+3) Install dependencies (SSH recommended)
+- If your host provides SSH, run these from the project root:
+
+```bash
+composer install --no-dev --optimize-autoloader
+npm install && npm run build
+php artisan storage:link
+chmod -R 775 storage bootstrap/cache
+```
+
+If SSH is not available, ask your host to run Composer for you or deploy a build produced locally.
+
+4) Point the web root
+- Ensure your domain points to the project’s `public/` directory.
+
+5) Run the web installer
+- Visit your domain (or `https://your-domain.com/install`). Follow the wizard to complete:
+  - Server checks
+  - Database details (host, port, name, username, password)
+  - Site details (title, description)
+  - Admin user (name, email, password)
+
+Notes:
+- The installer writes a default `.env` automatically. You don’t need to create it.
+- After completion, you’ll see “Installation Complete” and a button to open the admin panel.
+
+---
+
+## Method B: FileZilla (FTP/SFTP)
+
+Use this when you deploy via FTP/SFTP from your machine.
+
+1) Upload package
+- Connect with FileZilla to your server (SFTP preferred).
+- Navigate to the target directory (document root for the site).
+- Upload the LarPress ZIP.
+
+2) Extract on server
+- If your host has a control panel: extract the ZIP in File Manager.
+- If you have SSH:
+
+```bash
+unzip larpress.zip -d .
+```
+
+3) Install dependencies (SSH)
+
+```bash
+cd /path/to/your/site
+composer install --no-dev --optimize-autoloader
+npm install && npm run build
+php artisan storage:link
+chmod -R 775 storage bootstrap/cache
+```
+
+4) Point the web root to `public/` and run the web installer at your domain.
+
+What the installer configures
+- Creates default `.env`
+- Saves database configuration
+- Generates app key
+- Captures site title/description
+- Creates the initial admin user
+
+---
+
+## Method C: Web Installer from Git/SSH (Recommended)
 
 ### Step 1: Download LarPress
 

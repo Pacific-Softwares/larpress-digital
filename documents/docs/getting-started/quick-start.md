@@ -1,26 +1,3 @@
-# Quick Start
-
-Get up and running with LarPress in 10 minutes.
-
-## Installation
-
-```bash
-# Clone LarPress
-git clone https://github.com/yourusername/larpress.git
-cd larpress
-
-# Install dependencies
-composer install
-npm install && npm run build
-
-# Run web installer
-php artisan serve
-```
-
-Visit `http://localhost:8000/install`
-
-## First Steps
-
 ### 1. Access Admin Panel
 
 After installation, access your admin panel:
@@ -66,15 +43,6 @@ Items:
 - About (/about)
 - Contact (/contact)
 ```
-
-### 5. Install Your First Module
-
-**System** → **Modules** → **Browse Modules**:
-
-1. Find a module
-2. Click "Install"
-3. Activate the module
-4. Configure settings
 
 ## Common Tasks
 

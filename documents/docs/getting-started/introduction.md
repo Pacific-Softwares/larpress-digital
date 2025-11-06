@@ -33,9 +33,9 @@ LarPress is built with modern, proven technologies:
 - **Backend**: Laravel 11.x
 - **Admin Panel**: FilamentPHP v4.x
 - **Frontend**: Tailwind CSS, Alpine.js
-- **Database**: MySQL 5.7+ / PostgreSQL 10+
+- **Database**: MySQL 5.7+ 
 - **Cache**: Redis (optional)
-- **Queue**: Redis, Database, or Amazon SQS
+- **Queue**: Redis, Database
 
 ## Architecture Overview
 

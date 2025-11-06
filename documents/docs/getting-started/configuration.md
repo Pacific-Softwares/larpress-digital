@@ -302,14 +302,6 @@ php artisan up
 
 ## Localization
 
-### Set Default Locale
-
-```env
-APP_LOCALE=en
-APP_FALLBACK_LOCALE=en
-APP_FAKER_LOCALE=en_US
-```
-
 ### Add Languages
 
 Admin Panel → System → Languages
