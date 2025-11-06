@@ -1,126 +1,141 @@
----
-layout: home
+# Introduction
 
-hero:
-  name: LarPress
-  text: Modern Laravel CMS
-  tagline: Build powerful web applications with modular architecture, FilamentPHP admin panel, and robust developer tooling
-  image:
-    src: /src/hero-image.png
-    alt: LarPress
-  actions:
-    - theme: brand
-      text: Get Started
-      link: /getting-started/introduction
-    - theme: alt
-      text: View on GitHub
-      link: https://github.com/yourusername/larpress
+Welcome to LarPress - a modern, extensible Laravel-based CMS and application starter kit designed for developers who want to build powerful web applications quickly.
 
-features:
-  - icon: ⚡
-    title: Easy Installation
-    details: One-click web installer for fast setup. No complex configurations or manual database setup required.
-  
-  - icon: 🎨
-    title: FilamentPHP Admin
-    details: Beautiful, powerful admin panel built with FilamentPHP v4.x for managing users, content, and settings.
-  
-  - icon: 🧩
-    title: Modular Architecture
-    details: Extend functionality by adding modules via ZIP upload or directory. Build once, reuse everywhere.
-  
-  - icon: 🎭
-    title: Theme Support
-    details: Switch between UI themes effortlessly. Upload custom themes as ZIP files or directories.
-  
-  - icon: 👥
-    title: User Management
-    details: Complete user, role, and permission management with activity logging and API tokens.
-  
-  - icon: ⚙️
-    title: Developer Friendly
-    details: Built on Laravel with clean architecture, comprehensive API, and extensive documentation.
+## What is LarPress?
 
-  - icon: 🔒
-    title: Security First
-    details: IP restrictions, role-based access control, and comprehensive activity logging built-in.
-  
-  - icon: 📱
-    title: Responsive Design
-    details: Mobile-first admin panel and frontend themes that work beautifully on all devices.
-  
-  - icon: 🚀
-    title: Performance Optimized
-    details: Built-in caching, database optimization, and production-ready performance features.
----
+LarPress is a complete content management system and application framework built on Laravel 11.x. It combines the power of Laravel with the elegance of FilamentPHP to provide a robust foundation for any web project.
 
-## Quick Start
+### Key Features
 
-Install LarPress in minutes:
+- **Easy Installation** - One-click web installer gets you up and running in minutes
+- **FilamentPHP Admin** - Beautiful, modern admin panel for managing everything
+- **Modular Architecture** - Add features via installable modules
+- **Theme System** - Switch and customize UI themes easily
+- **Complete CMS** - Full content management with pages, posts, media, and more
+- **User Management** - Comprehensive user, role, and permission system
+- **Developer Friendly** - Clean code, extensive documentation, and API
 
-```bash
-# Clone the repository
-git clone https://github.com/yourusername/larpress.git
+## Who is LarPress For?
 
-# Install dependencies
-composer install
-npm install && npm run build
+LarPress is perfect for:
 
-# Run web installer
-php artisan serve
+- **Laravel Developers** building client projects
+- **Agencies** needing a reliable starting point
+- **SaaS Founders** launching MVPs quickly
+- **Content Creators** wanting a modern CMS
+- **Developers** who value clean, maintainable code
 
-# Visit http://localhost:8000/install
+## Technology Stack
+
+LarPress is built with modern, proven technologies:
+
+- **Backend**: Laravel 11.x
+- **Admin Panel**: FilamentPHP v4.x
+- **Frontend**: Tailwind CSS, Alpine.js
+- **Database**: MySQL 5.7+ 
+- **Cache**: Redis (optional)
+- **Queue**: Redis, Database
+
+## Architecture Overview
+
+```
+larpress/
+├── app/              # Application code
+├── bootstrap/        # Framework bootstrap
+├── config/           # Configuration files
+├── database/         # Migrations & seeders
+├── modules/          # Custom modules
+├── public/           # Public assets
+├── resources/        # Views, CSS, JS
+├── routes/           # Route definitions
+├── storage/          # File storage
+├── tests/            # Test files
+└── themes/           # Theme files
 ```
 
-## Why LarPress?
+## Core Modules
 
-LarPress is designed for developers who want to build powerful web applications quickly without sacrificing flexibility or code quality.
+LarPress comes with essential modules built-in:
 
-### Built on Proven Technologies
+### Content Module
+- Pages and posts management
+- Categories and tags
+- Media library
+- HTML blocks
+- Menu builder
+- Slider manager
 
-- **Laravel 11.x** - The most popular PHP framework
-- **FilamentPHP v4.x** - Modern admin panel builder
-- **Tailwind CSS** - Utility-first CSS framework
-- **Alpine.js** - Lightweight JavaScript framework
+### User Module
+- User management
+- Roles and permissions
+- Login activity tracking
+- API token management
+- IP restrictions
 
-### Perfect For
+### Communication Module
+- Contact forms
+- Email templates
+- SMS templates
+- Notification center
+- Announcements
 
-- 🏢 **Business Websites** - Professional corporate sites with CMS
-- 📰 **Content Portals** - News sites, blogs, and publications
-- 📚 **Documentation Sites** - Product docs and knowledge bases
-- 🏫 **Educational Platforms** - Learning management systems
-- 🤝 **Community Portals** - Forums and social platforms
-- 🏢 **Business Websites** - Professional corporate sites with CMS
-- 🎨 **Creative Portfolios** – Showcase for designers, artists, and photographers
-- 🏨 **Hospitality Websites** – Hotels, restaurants, and travel services
-- 🏥 **Healthcare Portals** – Clinics, hospitals, and patient management sites
-- 🏗️ **Agency & Services Sites** – Marketing, consulting, and IT service companies
-- 🎓 **Online Courses & Academies** – Sell or host digital learning content
-- 🎬 **Media & Entertainment** – Streaming, video, or podcast platforms
-- 🏘️ **Real Estate Platforms** – Property listings and agent management systems
-- 💼 **Freelancer Marketplaces** – Connect clients and professionals
-- 💬 **Knowledge & Support Centers** – FAQs, guides, and help desks
-- 💰 **Finance & Investment Portals** – FinTech, banking, and crypto platforms
+### System Module
+- Settings management
+- Backup system
+- Cache management
+- Activity logs
+- Version control
 
-## What's Included
+## What Makes LarPress Different?
 
-### Core Features
+### 1. True Modularity
+Unlike traditional CMSs, LarPress modules are self-contained Laravel packages that can be installed, removed, and shared independently.
 
-✅ One-click web installer  
-✅ FilamentPHP admin panel  
-✅ User & role management  
-✅ Content management system  
-✅ Media library  
-✅ Email & SMS templates  
-✅ Activity logging  
-✅ API with authentication  
-✅ Multi-language support  
-✅ Theme system  
-✅ Module system  
-✅ Backup management  
+### 2. FilamentPHP Integration
+Built on FilamentPHP v4.x, you get a modern, reactive admin panel without writing boilerplate code.
 
-## Explore the docs
+### 3. Developer Experience
+Clean Laravel code, comprehensive documentation, and extensive customization options make development a pleasure.
 
-- [Introduction](/getting-started/introduction)
-- [Getting Started / Installation](/getting-started/installation)
-- [Modules Overview](/modules/)
+### 4. Production Ready
+Security features, performance optimization, and deployment guides ensure your app is production-ready.
+
+### 5. Open Source
+MIT licensed, actively maintained, and community-driven.
+
+## System Requirements
+
+Before installing LarPress, ensure your server meets these requirements:
+
+- PHP 8.1 or higher
+- MySQL 5.7+ or PostgreSQL 10+
+- Composer 2.x
+- Node.js 16+ and NPM
+- Web server (Apache/Nginx)
+
+### PHP Extensions
+- BCMath
+- Ctype
+- cURL
+- DOM
+- Fileinfo
+- JSON
+- Mbstring
+- OpenSSL
+- PDO
+- Tokenizer
+- XML
+
+## Next Steps
+
+Ready to get started? Continue to the [Installation Guide](/getting-started/installation) to set up LarPress.
+
+## Getting Help
+
+If you need assistance:
+
+- 📚 Check the [documentation](/getting-started/introduction)
+- 💬 Join our [Discord community](https://discord.gg/larpress)
+- 🐛 Report bugs on [GitHub](https://github.com/yourusername/larpress/issues)
+- 📧 Email support at support@larpress.digital
