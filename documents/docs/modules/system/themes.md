@@ -2,6 +2,8 @@
 
 Themes control the visual appearance and layout of your LarPress frontend.
 
+#Quick Start - <a href="#quickStart"> Create a Theme from the Sample (recommended)</a>
+
 ## What are Themes?
 
 Themes in LarPress are:
@@ -72,27 +74,16 @@ These base layouts can include partials (header, footer, scripts) or use your ow
 <!-- views/layouts/app.blade.php -->
 
 <!DOCTYPE html>
-
 <html>
-
 <head>
-
     <title>@yield('title')</title>
-
     @include('layouts.partials.head')
-
 </head>
-
 <body>
-
     @include('layouts.partials.header')
-
     <main>@yield('content')</main>
-
     @include('layouts.partials.footer')
-
 </body>
-
 </html>
 
 ```
@@ -122,15 +113,10 @@ These base layouts can include partials (header, footer, scripts) or use your ow
     ```blade
 
     @extends('layouts.app')
-
     @section('content')
-
         @includeIf('pages.landing.partials.slider')
-
         @includeIf('pages.landing.partials.about_us')
-
         @includeIf('pages.landing.partials.services')
-
     @endsection
 
     ```
@@ -150,7 +136,6 @@ These base layouts can include partials (header, footer, scripts) or use your ow
 - **`views/dynamic_content_layout/`** - Templates for dynamic content types
 
   - `index.blade.php` - Listing page
-
   - `show.blade.php` - Detail/single page
 
 - **`views/errors/`** - Custom error pages (404, 500, etc.) - Optional
@@ -232,27 +217,17 @@ Contains your theme's custom helper functions file.
 // helper/echo_helper.php
 
 if (!function_exists('get_featured_posts')) {
-
     function get_featured_posts($limit = 5) {
-
         return \App\Models\Content::where('is_featured', true)
-
             ->limit($limit)
-
             ->get();
-
     }
-
 }
 
 if (!function_exists('theme_setting')) {
-
     function theme_setting($key, $default = null) {
-
         return setting('theme_echo_' . $key, $default);
-
     }
-
 }
 
 ```
@@ -262,11 +237,8 @@ if (!function_exists('theme_setting')) {
 ```blade
 
 @foreach(get_featured_posts(3) as $post)
-
     <article>{{ $post->title }}</article>
-
 @endforeach
-
 <div>{{ theme_setting('primary_color', '#667eea') }}</div>
 
 ```
@@ -314,23 +286,14 @@ Contains demo data in JSON format for one-click theme demo import.
 **Required fields:**
 
 - `name` - Display name
-
 - `slug` - Unique identifier (lowercase, letters/numbers/hyphens/underscores only)
-
 - `version` - Version number (e.g., "1.0.0")
-
 **Optional fields:**
-
 - `description` - Theme description
-
 - `author` - Author name
-
 - `protected` - Set to `true` to prevent overwriting via upload
-
 - `features` - Object with feature flags
-
 - `screenshot` - Path to screenshot image
-
 **Example:**
 
 ```json
@@ -338,27 +301,16 @@ Contains demo data in JSON format for one-click theme demo import.
 {
 
   "name": "My Custom Theme",
-
   "slug": "my_custom_theme",
-
   "version": "1.0.0",
-
   "description": "A beautiful theme with full customization",
-
   "author": "Your Name",
-
   "protected": false,
-
   "features": {
-
     "settings_integration": true,
-
     "responsive": true,
-
     "seo_optimized": true
-
   }
-
 }
 
 ```
@@ -391,19 +343,33 @@ Contains demo data in JSON format for one-click theme demo import.
 
 | Other view files | ⚪ Optional | Customize as needed |
 
-## Creating a Theme
+## <div id="quickStart"> Creating a Theme</div>
 
 ### Use the Starter (Recommended)
 
 1. Download the Sample Theme from Admin → System → Themes.
 
-2. Rename the folder to your theme slug (lowercase, letters/numbers/hyphens/underscores).
+2. On that page click Download Sample Theme. A ZIP file will be downloaded.
 
-3. Update: `theme.json`, helper(s), CSS, JS, and Blade views to match your new UI.
+3. Extract the ZIP locally.
 
-4. Zip the theme folder and upload in Admin → System → Themes → Upload.
+4. Rename the folder to your theme slug (lowercase, letters/numbers/hyphens/underscores).
 
-That’s it. The installer handles registration, and assets automatically.
+5. Update the theme.json file at the root of the extracted folder with your new theme name, slug and other configuration values.
+
+  - Make sure slug follows the pattern /^[a-z0-9\-_]+$/ (lowercase letters, numbers, hyphens or underscores only).
+
+6. Update: helper(s), CSS, JS, and Blade views to match your new UI.
+
+
+7. Once you update the files re-compress (zip) the entire theme folder.
+
+8. Upload the ZIP back from the same Admin → System → Themes page (use Upload Theme).
+
+9. After the upload completes, your new theme will appear in the list — click Activate to set it as the active theme.
+
+10. That’s it! The installer will automatically move all views, helpers, storage files, and assets for you.
+
 
 ### Theme Configuration (theme.json)
 
@@ -413,28 +379,17 @@ Sample minimal config:
 
 {
 
-  "name": "Sample Theme",
-
-  "slug": "sample_theme",
-
+  "name": "Demo Theme",
+  "slug": "demo_theme",
   "version": "1.0.0",
-
-  "description": "Sample Theme is dynamic theme with full settings integration",
-
+  "description": "Demo Theme is dynamic theme with full settings integration",
   "author": "System",
-
   "protected": true,
-
   "features": {
-
     "settings_integration": true,
-
     "responsive": true,
-
     "seo_optimized": true
-
   }
-
 }
 
 ```
@@ -442,6 +397,23 @@ Sample minimal config:
 Required fields: `name`, `slug`, `version`. The `slug` must match `/^[a-z0-9\-_]+$/`.
 
 Optional fields commonly used: `description`, `author`, `screenshot`, `features` or `settings` for feature flags and defaults.
+
+
+
+## Notes on iterative development and testing
+
+- Every time you make changes locally, create a ZIP of the theme folder and upload it again to update the theme in the portal. If the uploaded theme slug matches an existing theme, LarPress will replace it (unless it’s protected).
+
+- For fast testing during development you may edit files directly in the project themes/{slug} directory. Example flow:
+
+  1. Suppose you uploaded a theme with slug demo.
+
+  2. You will find view files at /themes/demo/views/* in your project. Make changes there to test immediately.
+
+  3. When you want to publish those same changes as an uploadable ZIP, copy the modified files back into the original folder you use to create ZIPs, re-zip, and re-upload.
+
+**Important:** Your theme views live under /themes/{theme_slug}/views/* — not under resources/views.
+
 
 ## Installing Themes
 
@@ -620,9 +592,7 @@ On frontend requests, LarPress binds a custom view finder that prioritizes the a
 <!-- Get site settings -->
 
 {{ setting('site_name') }}
-
 {{ setting('site_description') }}
-
 {{ setting('contact_email') }}
 
 ```
@@ -652,13 +622,9 @@ On frontend requests, LarPress binds a custom view finder that prioritizes the a
 // Register templates
 
 'templates' => [
-
     'default' => 'Default',
-
     'full-width' => 'Full Width',
-
     'landing-page' => 'Landing Page',
-
 ],
 
 ```

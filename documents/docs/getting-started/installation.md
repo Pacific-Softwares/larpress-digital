@@ -34,7 +34,6 @@ Use this when you have a hosting control panel with a browser File Manager.
 composer install --no-dev --optimize-autoloader
 npm install && npm run build
 php artisan storage:link
-chmod -R 775 storage bootstrap/cache
 ```
 
 If SSH is not available, ask your host to run Composer for you or deploy a build produced locally.
@@ -79,7 +78,6 @@ cd /path/to/your/site
 composer install --no-dev --optimize-autoloader
 npm install && npm run build
 php artisan storage:link
-chmod -R 775 storage bootstrap/cache
 ```
 
 4) Point the web root to `public/` and run the web installer at your domain.
@@ -123,7 +121,6 @@ npm run build
 
 ```bash
 # Set proper permissions
-chmod -R 775 storage bootstrap/cache
 chown -R www-data:www-data storage bootstrap/cache
 ```
 
@@ -224,17 +221,8 @@ php artisan storage:link
 ### Step 7: Set Permissions
 
 ```bash
-chmod -R 775 storage bootstrap/cache
 chown -R www-data:www-data storage bootstrap/cache
 ```
-
-### Step 8: Create Admin User
-
-```bash
-php artisan larpress:create-admin
-```
-
-Follow the prompts to create your admin account.
 
 ## Web Server Configuration
 

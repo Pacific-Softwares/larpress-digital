@@ -217,12 +217,6 @@ php artisan config:cache
 php artisan route:cache
 php artisan view:cache
 
-# Set permissions
-chmod -R 775 storage bootstrap/cache
-
-# Set up SSL
-sudo certbot --nginx -d your-domain.com
-
 # Configure queue worker
 # Set up supervisor for queue:work
 
