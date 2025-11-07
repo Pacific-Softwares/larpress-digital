@@ -267,7 +267,143 @@ Contains demo data in JSON format for one-click theme demo import.
 
 ```json
 
-{...}
+{
+    "menus": [
+        {
+            "name": "Home",
+            "is_base_url": true,
+            "url": "\/",
+            "target": "",
+            "icon": null,
+            "icon_color": null,
+            "css_classes": null,
+            "parent_id": null,
+            "order": 1,
+            "is_active": true,
+            "menu_location": "primary",
+            "permissions": null,
+            "meta": null,
+            "created_at": "2025-11-01T06:45:46.000000Z",
+            "updated_at": "2025-11-01T06:45:46.000000Z",
+            "children": []
+        },
+        {
+            "name": "Mission",
+            "is_base_url": true,
+            "url": "#mission",
+            "target": "",
+            "icon": null,
+            "icon_color": null,
+            "css_classes": null,
+            "parent_id": null,
+            "order": 2,
+            "is_active": true,
+            "menu_location": "primary",
+            "permissions": null,
+            "meta": null,
+            "created_at": "2025-11-01T06:45:46.000000Z",
+            "updated_at": "2025-11-01T06:45:46.000000Z",
+            "children": []
+        },
+        {
+            "name": "Events",
+            "is_base_url": true,
+            "url": "#events",
+            "target": "",
+            "icon": null,
+            "icon_color": null,
+            "css_classes": null,
+            "parent_id": null,
+            "order": 3,
+            "is_active": true,
+            "menu_location": "primary",
+            "permissions": null,
+            "meta": null,
+            "created_at": "2025-11-01T06:45:46.000000Z",
+            "updated_at": "2025-11-01T06:45:46.000000Z",
+            "children": []
+        }
+    ],
+    "content_type_categories": [
+        {
+            "content_type_id": null,
+            "name": "EDUCATION",
+            "slug": "education",
+            "status": "active",
+            "description": "EDUCATION",
+            "created_at": "2025-11-01T07:57:43.000000Z",
+            "updated_at": "2025-11-01T07:57:43.000000Z"
+        },
+        {
+            "content_type_id": null,
+            "name": "HEALTHCARE",
+            "slug": "health-care",
+            "status": "active",
+            "description": "HEALTHCARE",
+            "created_at": "2025-11-01T07:58:04.000000Z",
+            "updated_at": "2025-11-01T07:58:04.000000Z"
+        }
+    ],
+    "content_type": [
+        {
+            "name": "Page",
+            "slug": "page",
+            "description": "Page content type",
+            "status": "active",
+            "created_at": "2025-11-01T06:45:46.000000Z",
+            "updated_at": "2025-11-01T06:45:46.000000Z"
+        },
+        {
+            "name": "Blog",
+            "slug": "blog",
+            "description": "Blogs",
+            "status": "active",
+            "created_at": "2025-11-01T06:45:46.000000Z",
+            "updated_at": "2025-11-01T06:45:46.000000Z"
+        }
+    ],
+    "contents": [
+        {
+            "title": "Terms and Conditions",
+            "slug": "terms-and-conditions",
+            "type": {
+                "name": "Page",
+                "slug": "page"
+            },
+            "category_id": null,
+            "layout": "default",
+            "short_description": "Terms and conditions for site usage",
+            "description": "Terms and Conditions for Company Name\nIntroduction\nThese Website Standard Terms and Conditions written on this webpage shall manage your use of our website.",
+            "html_section": null,
+            "thumbnail": null,
+            "banner_image": null,
+            "status": "published",
+            "order": 1,
+            "external_url": null,
+            "additional_data": null,
+            "meta_title": null,
+            "meta_description": null,
+            "meta_keywords": null
+        }
+    ],
+    "sliders": [
+        {
+=            "heading": "The Future of Digital Publishing",
+            "subheading": "Exploring how content creation and distribution are evolving in the modern era.",
+            "order": 1,
+            "button_first_name": "Read More",
+            "button_first_link": "#",
+            "button_second_name": null,
+            "button_second_link": null,
+            "opposite_percentage": 50,
+            "media_path": "sliders\/01K8J8MJC5N42W68HZZB2T68G8.jpeg",
+            "is_active": 1,
+            "created_at": "2025-11-01T06:45:46.000000Z",
+            "updated_at": "2025-11-01T06:45:46.000000Z",
+            "background_color": "#000000"
+        }
+    ]
+}
 
 ```
 
@@ -319,29 +455,67 @@ Contains demo data in JSON format for one-click theme demo import.
 
 ## Quick Reference: What's Required vs Optional
 
-| File/Directory | Required | Notes |
-
-|---------------|----------|-------|
-
-| `theme.json` | ✅ Yes | Must have name, slug, version |
-
-| `views/layouts/app.blade.php` | ✅ Yes | Missing causes errors |
-
-| `views/layouts/guest.blade.php` | ✅ Yes | Missing causes errors |
-
-| `views/pages/home.blade.php` | ✅ Yes | Required but customizable |
-
-| `views/pages/contact_us.blade.php` | ✅ Yes | Required but customizable |
-
-| `assets/` directory | ⚠️ Recommended | CSS/JS for styling |
-
-| `helper/` directory | ⚪ Optional | Custom helper functions |
-
-| `public/` directory | ⚪ Optional | Storage media files |
-
-| `demo/` directory | ⚪ Optional | Demo data JSON |
-
-| Other view files | ⚪ Optional | Customize as needed |
+<table>
+  <thead>
+    <tr>
+      <th>File/Directory</th>
+      <th>Required</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>theme.json</code></td>
+      <td>✅ Yes</td>
+      <td>Must have name, slug, version</td>
+    </tr>
+    <tr>
+      <td><code>views/layouts/app.blade.php</code></td>
+      <td>✅ Yes</td>
+      <td>Missing causes errors</td>
+    </tr>
+    <tr>
+      <td><code>views/layouts/guest.blade.php</code></td>
+      <td>✅ Yes</td>
+      <td>Missing causes errors</td>
+    </tr>
+    <tr>
+      <td><code>views/pages/home.blade.php</code></td>
+      <td>✅ Yes</td>
+      <td>Required but customizable</td>
+    </tr>
+    <tr>
+      <td><code>views/pages/contact_us.blade.php</code></td>
+      <td>✅ Yes</td>
+      <td>Required but customizable</td>
+    </tr>
+    <tr>
+      <td><code>assets/</code> directory</td>
+      <td>⚠️ Recommended</td>
+      <td>CSS/JS for styling</td>
+    </tr>
+    <tr>
+      <td><code>helper/</code> directory</td>
+      <td>⚪ Optional</td>
+      <td>Custom helper functions</td>
+    </tr>
+    <tr>
+      <td><code>public/</code> directory</td>
+      <td>⚪ Optional</td>
+      <td>Storage media files</td>
+    </tr>
+    <tr>
+      <td><code>demo/</code> directory</td>
+      <td>⚪ Optional</td>
+      <td>Demo data JSON</td>
+    </tr>
+    <tr>
+      <td>Other view files</td>
+      <td>⚪ Optional</td>
+      <td>Customize as needed</td>
+    </tr>
+  </tbody>
+</table>
 
 ## <div id="quickStart"> Creating a Theme</div>
 
