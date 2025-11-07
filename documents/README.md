@@ -1,6 +1,6 @@
-# LarPress Documentation
+# LaraPressDigital Documentation
 
-Official documentation for LarPress - Modern Laravel CMS & Application Starter Kit.
+Official documentation for LaraPressDigital - Modern Laravel CMS & Application Starter Kit.
 
 ## Getting Started
 
@@ -31,7 +31,7 @@ The documentation is built with [VitePress](https://vitepress.dev/).
 ## Structure
 
 ```
-larpress-docs/
+LaraPressDigital-docs/
 ├── docs/
 │   ├── index.md                    # Home page
 │   ├── getting-started/            # Getting started guides
@@ -154,7 +154,7 @@ MIT License - see LICENSE file for details.
 
 ## Links
 
-- [LarPress Website](https://larpress.digital)
-- [GitHub Repository](https://github.com/yourusername/larpress)
-- [Discord Community](https://discord.gg/larpress)
+- [LaraPressDigital Website](https://LaraPressDigital.digital)
+- [GitHub Repository](https://github.com/yourusername/LaraPressDigital)
+- [Discord Community](https://discord.gg/LaraPressDigital)
 

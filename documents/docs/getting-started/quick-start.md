@@ -27,7 +27,7 @@ Slug: welcome
 Status: Published
 
 Content:
-Welcome to my amazing website built with LarPress!
+Welcome to my amazing website built with LaraPressDigital!
 ```
 
 ### 4. Create a Menu
@@ -280,9 +280,9 @@ Now that you're up and running:
 ## Resources
 
 - 📚 [Full Documentation](/getting-started/introduction)
-- 💬 [Community Discord](https://discord.gg/larpress)
-- 🎥 [Video Tutorials](https://youtube.com/larpress)
-- 🐛 [Report Issues](https://github.com/yourusername/larpress/issues)
+- 💬 [Community Discord](https://discord.gg/LaraPressDigital)
+- 🎥 [Video Tutorials](https://youtube.com/LaraPressDigital)
+- 🐛 [Report Issues](https://github.com/yourusername/LaraPressDigital/issues)
 
 ## Tips & Tricks
 
@@ -307,8 +307,8 @@ In Admin Panel:
 2. Enable 2FA
 3. Use strong passwords
 4. Enable IP restrictions
-5. Keep LarPress updated
+5. Keep LaraPressDigital updated
 6. Regular backups
 
-Happy building with LarPress! 🚀
+Happy building with LaraPressDigital! 🚀
 

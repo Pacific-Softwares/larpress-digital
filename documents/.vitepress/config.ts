@@ -1,7 +1,7 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
-  title: 'LarPress',
+  title: 'LaraPressDigital',
   description: 'Modern Laravel CMS & Application Starter Kit',
   
   themeConfig: {
@@ -11,7 +11,7 @@ export default defineConfig({
       { text: 'Home', link: '/' },
       { text: 'Guide', link: '/getting-started/introduction' },
       { text: 'API', link: '/api/authentication' },
-      { text: 'Demo', link: 'https://demo.larpress.digital' }
+      { text: 'Demo', link: 'https://demo.LaraPressDigital.digital' }
     ],
 
     sidebar: {
@@ -144,13 +144,13 @@ export default defineConfig({
     },
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/yourusername/larpress' },
-      { icon: 'twitter', link: 'https://twitter.com/larpress' }
+      { icon: 'github', link: 'https://github.com/yourusername/LaraPressDigital' },
+      { icon: 'twitter', link: 'https://twitter.com/LaraPressDigital' }
     ],
 
     footer: {
       message: 'Released under the MIT License.',
-      copyright: 'Copyright © 2024 LarPress'
+      copyright: 'Copyright © 2024 LaraPressDigital'
     },
 
     search: {
@@ -158,7 +158,7 @@ export default defineConfig({
     },
 
     editLink: {
-      pattern: 'https://github.com/yourusername/larpress-docs/edit/main/docs/:path',
+      pattern: 'https://github.com/yourusername/LaraPressDigital-docs/edit/main/docs/:path',
       text: 'Edit this page on GitHub'
     }
   },
@@ -167,7 +167,7 @@ export default defineConfig({
     ['link', { rel: 'icon', href: '/favicon.ico' }],
     ['meta', { name: 'theme-color', content: '#667eea' }],
     ['meta', { property: 'og:type', content: 'website' }],
-    ['meta', { property: 'og:title', content: 'LarPress Documentation' }],
+    ['meta', { property: 'og:title', content: 'LaraPressDigital Documentation' }],
     ['meta', { property: 'og:description', content: 'Modern Laravel CMS & Application Starter Kit' }]
   ]
 })

@@ -1,10 +1,10 @@
 # Introduction
 
-Welcome to LarPress - a modern, extensible Laravel-based CMS and application starter kit designed for developers who want to build powerful web applications quickly.
+Welcome to LaraPressDigital - a modern, extensible Laravel-based CMS and application starter kit designed for developers who want to build powerful web applications quickly.
 
-## What is LarPress?
+## What is LaraPressDigital?
 
-LarPress is a complete content management system and application framework built on Laravel 11.x. It combines the power of Laravel with the elegance of FilamentPHP to provide a robust foundation for any web project.
+LaraPressDigital is a complete content management system and application framework built on Laravel 11.x. It combines the power of Laravel with the elegance of FilamentPHP to provide a robust foundation for any web project.
 
 ### Key Features
 
@@ -16,9 +16,9 @@ LarPress is a complete content management system and application framework built
 - **User Management** - Comprehensive user, role, and permission system
 - **Developer Friendly** - Clean code, extensive documentation, and API
 
-## Who is LarPress For?
+## Who is LaraPressDigital For?
 
-LarPress is perfect for:
+LaraPressDigital is perfect for:
 
 - **Laravel Developers** building client projects
 - **Agencies** needing a reliable starting point
@@ -28,7 +28,7 @@ LarPress is perfect for:
 
 ## Technology Stack
 
-LarPress is built with modern, proven technologies:
+LaraPressDigital is built with modern, proven technologies:
 
 - **Backend**: Laravel 11.x
 - **Admin Panel**: FilamentPHP v4.x
@@ -40,7 +40,7 @@ LarPress is built with modern, proven technologies:
 ## Architecture Overview
 
 ```
-larpress/
+LaraPressDigital/
 ├── app/              # Application code
 ├── bootstrap/        # Framework bootstrap
 ├── config/           # Configuration files
@@ -56,7 +56,7 @@ larpress/
 
 ## Core Modules
 
-LarPress comes with essential modules built-in:
+LaraPressDigital comes with essential modules built-in:
 
 ### Content Module
 - Pages and posts management
@@ -87,10 +87,10 @@ LarPress comes with essential modules built-in:
 - Activity logs
 - Version control
 
-## What Makes LarPress Different?
+## What Makes LaraPressDigital Different?
 
 ### 1. True Modularity
-Unlike traditional CMSs, LarPress modules are self-contained Laravel packages that can be installed, removed, and shared independently.
+Unlike traditional CMSs, LaraPressDigital modules are self-contained Laravel packages that can be installed, removed, and shared independently.
 
 ### 2. FilamentPHP Integration
 Built on FilamentPHP v4.x, you get a modern, reactive admin panel without writing boilerplate code.
@@ -106,7 +106,7 @@ MIT licensed, actively maintained, and community-driven.
 
 ## System Requirements
 
-Before installing LarPress, ensure your server meets these requirements:
+Before installing LaraPressDigital, ensure your server meets these requirements:
 
 - PHP 8.1 or higher
 - MySQL 5.7+ or PostgreSQL 10+
@@ -129,13 +129,13 @@ Before installing LarPress, ensure your server meets these requirements:
 
 ## Next Steps
 
-Ready to get started? Continue to the [Installation Guide](/getting-started/installation) to set up LarPress.
+Ready to get started? Continue to the [Installation Guide](/getting-started/installation) to set up LaraPressDigital.
 
 ## Getting Help
 
 If you need assistance:
 
 - 📚 Check the [documentation](/getting-started/introduction)
-- 💬 Join our [Discord community](https://discord.gg/larpress)
-- 🐛 Report bugs on [GitHub](https://github.com/yourusername/larpress/issues)
-- 📧 Email support at support@larpress.digital
+- 💬 Join our [Discord community](https://discord.gg/LaraPressDigital)
+- 🐛 Report bugs on [GitHub](https://github.com/yourusername/LaraPressDigital/issues)
+- 📧 Email support at support@LaraPressDigital.digital

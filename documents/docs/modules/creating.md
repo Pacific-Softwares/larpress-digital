@@ -1,6 +1,6 @@
 # Creating Modules
 
-Learn how to create your first LarPress module from scratch.
+Learn how to create your first LaraPressDigital module from scratch.
 
 ## Generate Module
 
@@ -42,7 +42,7 @@ Edit `module.json`:
     "Modules\\Blog\\Providers\\BlogServiceProvider"
   ],
   "requires": {
-    "larpress": "^1.0"
+    "LaraPressDigital": "^1.0"
   }
 }
 ```

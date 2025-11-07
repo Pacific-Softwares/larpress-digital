@@ -1,11 +1,11 @@
 # Modules (System)
 # Modules Introduction
 
-Modules are self-contained Laravel packages that extend LarPress functionality. They allow you to add features without modifying core code.
+Modules are self-contained Laravel packages that extend LaraPressDigital functionality. They allow you to add features without modifying core code.
 
 ## What are Modules?
 
-Modules in LarPress are:
+Modules in LaraPressDigital are:
 
 - **Self-Contained** - Everything needed in one package
 - **Installable** - Easy installation via ZIP or directory
@@ -160,7 +160,7 @@ Each module has a `module.json` file:
   ],
   "files": [],
   "requires": {
-    "larpress": "^1.0",
+    "LaraPressDigital": "^1.0",
     "php": "^8.1"
   },
   "autoload": {
@@ -180,7 +180,7 @@ In `composer.json`:
 ```json
 {
   "require": {
-    "larpress/core": "^1.0",
+    "LaraPressDigital/core": "^1.0",
     "modules/media": "^1.0",
     "guzzlehttp/guzzle": "^7.0"
   }
@@ -194,7 +194,7 @@ In `module.json`:
 ```json
 {
   "requires": {
-    "larpress": "^1.0",
+    "LaraPressDigital": "^1.0",
     "modules": {
       "Media": "^1.0",
       "User": "^1.0"
@@ -205,19 +205,19 @@ In `module.json`:
 
 ## Module Hooks
 
-Modules can hook into LarPress events:
+Modules can hook into LaraPressDigital events:
 
 ```php
 // In ModuleServiceProvider
 public function boot()
 {
     // Register event listeners
-    Event::listen('larpress.post.created', function($post) {
+    Event::listen('LaraPressDigital.post.created', function($post) {
         // Handle post created
     });
     
     // Add admin menu items
-    $this->app['larpress.admin.menu']->add([
+    $this->app['LaraPressDigital.admin.menu']->add([
         'label' => 'Blog',
         'route' => 'admin.blog.index',
         'icon' => 'heroicon-o-book-open',

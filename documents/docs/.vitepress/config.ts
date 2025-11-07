@@ -1,5 +1,5 @@
 export default {
-	title: 'LarPress',
+	title: 'LaraPressDigital',
 	description: 'Modern Laravel CMS',
 	cleanUrls: true,
 	lastUpdated: true,
@@ -13,7 +13,7 @@ export default {
 			{
 				text: 'Introduction',
 				items: [
-					{ text: 'What is LarPress?', link: '/getting-started/introduction' },
+					{ text: 'What is LaraPressDigital?', link: '/getting-started/introduction' },
 				],
 			},
 			{

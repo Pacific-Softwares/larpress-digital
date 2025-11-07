@@ -1,4 +1,4 @@
-# LarPress Documentation Setup Guide
+# LaraPressDigital Documentation Setup Guide
 
 Quick guide to get the documentation site running.
 
@@ -11,7 +11,7 @@ Quick guide to get the documentation site running.
 
 ```bash
 # Navigate to docs directory
-cd larpress-docs
+cd LaraPressDigital-docs
 
 # Install dependencies
 npm install
@@ -38,7 +38,7 @@ npm run docs:preview
 ## Project Structure
 
 ```
-larpress-docs/
+LaraPressDigital-docs/
 ├── docs/                           # All documentation files
 │   ├── index.md                    # Home page
 │   ├── getting-started/            # Getting started guides
@@ -110,7 +110,7 @@ Edit `.vitepress/config.ts`:
 
 ```typescript
 export default defineConfig({
-  title: 'LarPress',
+  title: 'LaraPressDigital',
   description: 'Your description',
   themeConfig: {
     logo: '/logo.svg',
@@ -260,7 +260,7 @@ While running `npm run docs:dev`, changes to markdown files will automatically r
 
 - [VitePress Documentation](https://vitepress.dev/)
 - [Markdown Guide](https://www.markdownguide.org/)
-- [LarPress Discord](https://discord.gg/larpress)
+- [LaraPressDigital Discord](https://discord.gg/LaraPressDigital)
 
 ## Contributing
 

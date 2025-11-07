@@ -5,7 +5,7 @@ title: Modules
 
 # Modules
 
-LarPress groups administrative functionality into four areas. Browse each module guide below.
+LaraPressDigital groups administrative functionality into four areas. Browse each module guide below.
 
 ## Access Control
 - [Users](/modules/access-control/users)

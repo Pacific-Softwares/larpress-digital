@@ -1,16 +1,16 @@
 # Configuration
 
-Learn how to configure LarPress for your specific needs.
+Learn how to configure LaraPressDigital for your specific needs.
 
 ## Environment Configuration
 
-LarPress uses Laravel's `.env` file for environment-specific configuration.
+LaraPressDigital uses Laravel's `.env` file for environment-specific configuration.
 
 ### Essential Settings
 
 ```env
 # Application
-APP_NAME="LarPress"
+APP_NAME="LaraPressDigital"
 APP_ENV=production
 APP_KEY=base64:generated_key_here
 APP_DEBUG=false
@@ -20,7 +20,7 @@ APP_URL=https://your-domain.com
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=larpress
+DB_DATABASE=LaraPressDigital
 DB_USERNAME=root
 DB_PASSWORD=your_secure_password
 
@@ -53,7 +53,7 @@ MAIL_FROM_NAME="${APP_NAME}"
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=larpress
+DB_DATABASE=LaraPressDigital
 DB_USERNAME=root
 DB_PASSWORD=
 ```
@@ -64,7 +64,7 @@ DB_PASSWORD=
 DB_CONNECTION=pgsql
 DB_HOST=127.0.0.1
 DB_PORT=5432
-DB_DATABASE=larpress
+DB_DATABASE=LaraPressDigital
 DB_USERNAME=postgres
 DB_PASSWORD=
 ```
@@ -182,7 +182,7 @@ AWS_BUCKET=your-bucket-name
 
 ### Admin Panel Access
 
-Configure in `config/larpress.php`:
+Configure in `config/LaraPressDigital.php`:
 
 ```php
 return [
@@ -214,7 +214,7 @@ Enable IP whitelist in Admin Panel → Access Control → IP Restrictions.
 
 ### API Rate Limiting
 
-Configure in `config/larpress.php`:
+Configure in `config/LaraPressDigital.php`:
 
 ```php
 'api' => [
@@ -312,7 +312,7 @@ Configure in `config/backup.php`:
 
 ```php
 'backup' => [
-    'name' => env('APP_NAME', 'larpress'),
+    'name' => env('APP_NAME', 'LaraPressDigital'),
     'source' => [
         'files' => [
             'include' => [
