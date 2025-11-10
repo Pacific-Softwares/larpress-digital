@@ -1,10 +1,10 @@
 # Modules Introduction
 
-Modules are self-contained Laravel packages that extend LaraPressDigital functionality. They allow you to add features without modifying core code.
+Modules are self-contained Laravel packages that extend larpress functionality. They allow you to add features without modifying core code.
 
 ## What are Modules?
 
-Modules in LaraPressDigital are:
+Modules in larpress are:
 
 - **Self-Contained** - Everything needed in one package
 - **Installable** - Easy installation via ZIP or directory
@@ -120,7 +120,7 @@ Leverage the starter structure as a baseline, extending it with controllers, rou
 
 ## How Upload & Install Work (Under the Hood)
 
-When you upload a module ZIP, LaraPressDigital follows these steps:
+When you upload a module ZIP, larpress follows these steps:
 
 1. Validate the uploaded file and extract it into a temporary directory.
 2. Locate the module manifest (`module.json`) and optional `Installer.json` at the root or first nested directory.

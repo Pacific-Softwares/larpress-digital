@@ -1,10 +1,10 @@
 # Installation
 
-This guide will walk you through installing LaraPressDigital on your server.
+This guide will walk you through installing larpress on your server.
 
 ## Installation Methods
 
-LaraPressDigital offers multiple installation methods:
+larpress offers multiple installation methods:
 
 1. **Via File Manager (cPanel/Plesk/DirectAdmin)** – Upload ZIP, extract, then run installer
 2. **Via FileZilla (FTP/SFTP)** – Upload ZIP, extract on server, then run installer
@@ -18,7 +18,7 @@ LaraPressDigital offers multiple installation methods:
 Use this when you have a hosting control panel with a browser File Manager.
 
 1) Upload package
-- Download the LaraPressDigital release ZIP.
+- Download the larpress release ZIP.
 - In your panel, open File Manager and navigate to your target directory:
   - Root domain: `public_html/`
   - Subdomain/addon: that site’s document root
@@ -61,14 +61,14 @@ Use this when you deploy via FTP/SFTP from your machine.
 1) Upload package
 - Connect with FileZilla to your server (SFTP preferred).
 - Navigate to the target directory (document root for the site).
-- Upload the LaraPressDigital ZIP.
+- Upload the larpress ZIP.
 
 2) Extract on server
 - If your host has a control panel: extract the ZIP in File Manager.
 - If you have SSH:
 
 ```bash
-unzip LaraPressDigital.zip -d .
+unzip larpress.zip -d .
 ```
 
 3) Install dependencies (SSH)
@@ -93,17 +93,17 @@ What the installer configures
 
 ## Method C: Web Installer from Git/SSH (Recommended)
 
-### Step 1: Download LaraPressDigital
+### Step 1: Download larpress
 
 ```bash
 # Clone from GitHub
-git clone https://github.com/yourusername/LaraPressDigital.git
-cd LaraPressDigital
+git clone https://github.com/yourusername/larpress.git
+cd larpress
 
 # Or download ZIP
-wget https://github.com/yourusername/LaraPressDigital/archive/main.zip
+wget https://github.com/yourusername/larpress/archive/main.zip
 unzip main.zip
-cd LaraPressDigital-main
+cd larpress-main
 ```
 
 ### Step 2: Install Dependencies
@@ -159,8 +159,8 @@ Keep your database credentials handy. You'll need:
 
 ```bash
 # Clone repository
-git clone https://github.com/yourusername/LaraPressDigital.git
-cd LaraPressDigital
+git clone https://github.com/yourusername/larpress.git
+cd larpress
 
 # Copy environment file
 cp .env.example .env
@@ -171,7 +171,7 @@ cp .env.example .env
 Edit `.env` file with your settings:
 
 ```env
-APP_NAME=LaraPressDigital
+APP_NAME=larpress
 APP_ENV=production
 APP_KEY=
 APP_DEBUG=false
@@ -180,7 +180,7 @@ APP_URL=https://your-domain.com
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=LaraPressDigital
+DB_DATABASE=larpress
 DB_USERNAME=root
 DB_PASSWORD=your_password
 
@@ -242,15 +242,15 @@ Virtual host configuration:
 ```apache
 <VirtualHost *:80>
     ServerName your-domain.com
-    DocumentRoot /path/to/LaraPressDigital/public
+    DocumentRoot /path/to/larpress/public
 
-    <Directory /path/to/LaraPressDigital/public>
+    <Directory /path/to/larpress/public>
         AllowOverride All
         Require all granted
     </Directory>
 
-    ErrorLog ${APACHE_LOG_DIR}/LaraPressDigital-error.log
-    CustomLog ${APACHE_LOG_DIR}/LaraPressDigital-access.log combined
+    ErrorLog ${APACHE_LOG_DIR}/larpress-error.log
+    CustomLog ${APACHE_LOG_DIR}/larpress-access.log combined
 </VirtualHost>
 ```
 
@@ -260,7 +260,7 @@ Virtual host configuration:
 server {
     listen 80;
     server_name your-domain.com;
-    root /path/to/LaraPressDigital/public;
+    root /path/to/larpress/public;
 
     add_header X-Frame-Options "SAMEORIGIN";
     add_header X-Content-Type-Options "nosniff";
@@ -314,13 +314,13 @@ For production, set up a queue worker:
 
 ```bash
 # Using Supervisor
-sudo nano /etc/supervisor/conf.d/LaraPressDigital-worker.conf
+sudo nano /etc/supervisor/conf.d/larpress-worker.conf
 ```
 
 ```ini
-[program:LaraPressDigital-worker]
+[program:larpress-worker]
 process_name=%(program_name)s_%(process_num)02d
-command=php /path/to/LaraPressDigital/artisan queue:work --sleep=3 --tries=3 --max-time=3600
+command=php /path/to/larpress/artisan queue:work --sleep=3 --tries=3 --max-time=3600
 autostart=true
 autorestart=true
 stopasgroup=true
@@ -328,7 +328,7 @@ killasgroup=true
 user=www-data
 numprocs=2
 redirect_stderr=true
-stdout_logfile=/path/to/LaraPressDigital/storage/logs/worker.log
+stdout_logfile=/path/to/larpress/storage/logs/worker.log
 stopwaitsecs=3600
 ```
 
@@ -341,7 +341,7 @@ crontab -e
 ```
 
 ```cron
-* * * * * cd /path/to/LaraPressDigital && php artisan schedule:run >> /dev/null 2>&1
+* * * * * cd /path/to/larpress && php artisan schedule:run >> /dev/null 2>&1
 ```
 
 ### 4. Configure SSL (Production)
@@ -392,7 +392,7 @@ php artisan view:clear
 php -d memory_limit=-1 /usr/local/bin/composer install
 ```
 
-## Updating LaraPressDigital
+## Updating larpress
 
 ```bash
 # Pull latest changes
@@ -426,6 +426,6 @@ After installation:
 If you encounter issues:
 
 - Check [Common Issues](/troubleshooting)
-- Join [Discord Community](https://discord.gg/LaraPressDigital)
-- Create [GitHub Issue](https://github.com/yourusername/LaraPressDigital/issues)
+- Join [Discord Community](https://discord.gg/larpress)
+- Create [GitHub Issue](https://github.com/yourusername/larpress/issues)
 

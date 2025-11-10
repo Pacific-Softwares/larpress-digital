@@ -1,10 +1,10 @@
 # Modules Introduction
 
-Modules are self-contained Laravel packages that extend LaraPressDigital functionality. They allow you to add features without modifying core code.
+Modules are self-contained Laravel packages that extend larpress functionality. They allow you to add features without modifying core code.
 
 ## What are Modules?
 
-Modules in LaraPressDigital are:
+Modules in larpress are:
 
 - **Self-Contained** - Everything needed in one package
 - **Installable** - Easy installation via ZIP or directory
@@ -159,7 +159,7 @@ Each module has a `module.json` file:
   ],
   "files": [],
   "requires": {
-    "LaraPressDigital": "^1.0",
+    "larpress": "^1.0",
     "php": "^8.1"
   },
   "autoload": {
@@ -179,7 +179,7 @@ In `composer.json`:
 ```json
 {
   "require": {
-    "LaraPressDigital/core": "^1.0",
+    "larpress/core": "^1.0",
     "modules/media": "^1.0",
     "guzzlehttp/guzzle": "^7.0"
   }
@@ -193,7 +193,7 @@ In `module.json`:
 ```json
 {
   "requires": {
-    "LaraPressDigital": "^1.0",
+    "larpress": "^1.0",
     "modules": {
       "Media": "^1.0",
       "User": "^1.0"
@@ -204,19 +204,19 @@ In `module.json`:
 
 ## Module Hooks
 
-Modules can hook into LaraPressDigital events:
+Modules can hook into larpress events:
 
 ```php
 // In ModuleServiceProvider
 public function boot()
 {
     // Register event listeners
-    Event::listen('LaraPressDigital.post.created', function($post) {
+    Event::listen('larpress.post.created', function($post) {
         // Handle post created
     });
     
     // Add admin menu items
-    $this->app['LaraPressDigital.admin.menu']->add([
+    $this->app['larpress.admin.menu']->add([
         'label' => 'Blog',
         'route' => 'admin.blog.index',
         'icon' => 'heroicon-o-book-open',
@@ -237,8 +237,8 @@ public function boot()
 ### Community Modules
 
 Browse community modules at:
-- [LaraPressDigital Marketplace](https://marketplace.LaraPressDigital.digital)
-- [GitHub](https://github.com/topics/LaraPressDigital-module)
+- [larpress Marketplace](https://marketplace.larpress.digital)
+- [GitHub](https://github.com/topics/larpress-module)
 
 ## Creating Modules
 

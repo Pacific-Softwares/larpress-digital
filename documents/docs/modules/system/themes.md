@@ -1,12 +1,12 @@
 # Themes Introduction
 
-Themes control the visual appearance and layout of your LaraPressDigital frontend.
+Themes control the visual appearance and layout of your LarPress frontend.
 
 #Quick Start - <a href="#quickStart"> Create a Theme from the Sample (recommended)</a>
 
 ## What are Themes?
 
-Themes in LaraPressDigital are:
+Themes in LarPress are:
 
 - **Blade-Based** - Use Laravel Blade templates
 - **Modular** - Self-contained with assets
@@ -576,7 +576,7 @@ Optional fields commonly used: `description`, `author`, `screenshot`, `features`
 
 ## Notes on iterative development and testing
 
-- Every time you make changes locally, create a ZIP of the theme folder and upload it again to update the theme in the portal. If the uploaded theme slug matches an existing theme, LaraPressDigital will replace it (unless it’s protected).
+- Every time you make changes locally, create a ZIP of the theme folder and upload it again to update the theme in the portal. If the uploaded theme slug matches an existing theme, LarPress will replace it (unless it’s protected).
 
 - For fast testing during development you may edit files directly in the project themes/{slug} directory. Example flow:
 
@@ -609,7 +609,7 @@ Notes:
 
 ## How Upload & Install Work (Under the Hood)
 
-When you upload a theme ZIP, LaraPressDigital performs these steps automatically:
+When you upload a theme ZIP, larPress performs these steps automatically:
 
 1. Validate the file and extract it to a temporary folder.
 
@@ -639,7 +639,7 @@ When you upload a theme ZIP, LaraPressDigital performs these steps automatically
 
 ### Active Theme Rendering
 
-On frontend requests, LaraPressDigital binds a custom view finder that prioritizes the active theme (`themes/{activeSlug}/views`) and falls back to the default theme. If a helper file for the active theme exists in `app/Helpers/{slug}_helper.php`, it’s auto‑loaded so your Blade views can use those helpers immediately.
+On frontend requests, larPress binds a custom view finder that prioritizes the active theme (`themes/{activeSlug}/views`) and falls back to the default theme. If a helper file for the active theme exists in `app/Helpers/{slug}_helper.php`, it’s auto‑loaded so your Blade views can use those helpers immediately.
 
 ### Main Layout
 
