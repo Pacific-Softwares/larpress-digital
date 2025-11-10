@@ -1,13 +1,20 @@
 # Content / Pages
 
-Create and manage static pages with SEO-friendly URLs and rich content.
+Manage structured pages with type-aware layouts, media, and SEO metadata.
 
-## Features
-- Page builder with blocks (text, media, HTML)
-- Draft/publish scheduling
-- SEO fields (title, description, OpenGraph)
+## Form highlights
+- Auto-generate slugs from the title, with per-type uniqueness checks
+- Choose content type, optional category, and active theme layout
+- Capture ordering, popularity flag, external URL, thumbnail, and banner images
+- Write summaries plus rich HTML (supporting `[[slug-of-html-block]]` shortcodes)
+- Configure status, meta title/description/keywords, and add custom fields via repeater
 
-## Common tasks
-- Create a landing page
-- Set a page as the homepage
-- Translate content to multiple languages
+## Table tools
+- Searchable title, copyable slug, and type/status badges
+- Status colors for draft/published/unpublished with quick filters
+- Bulk delete and default sort by latest update
+
+## Tips
+- Keep layouts consistent with the selected content type
+- Use additional data for lightweight key/value metadata
+- Reference HTML blocks when you need reusable markup snippets

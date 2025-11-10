@@ -1,11 +1,13 @@
 # IP Restrictions
 
-Restrict access to the admin panel by IP address or CIDR.
+Enforce allowlist/denylist rules for specific IPs or users.
 
-## Modes
-- Allowlist (recommended)
-- Blocklist
+## Form highlights
+- Capture IP, optional linked user, and rationale
+- Toggle active status and set optional expiry timestamps
+- Leave user blank to apply rules globally
 
-## Tips
-- Add your current IP before enabling allowlist
-- Document shared office ranges
+## Table tools
+- Quick search across IPs and associated users
+- Status icons for active/inactive with expiry column
+- Filters by list type and active state

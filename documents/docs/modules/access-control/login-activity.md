@@ -1,12 +1,11 @@
 # Login Activity
 
-Audit user sign-ins and security-related events.
+Audit read-only login sessions recorded by the system.
 
 ## Data captured
-- User, IP address, user agent
-- Timestamp and result (success/failure)
-- 2FA/MFA status if applicable
+- User ID, IP address, user agent string
+- Login/logout timestamps with newest first
 
 ## Usage
-- Filter by user, date range, status
-- Export for compliance reviews
+- Search by user or IP to investigate incidents
+- Retains chronological trail; no edits or exports in-app

@@ -1,13 +1,13 @@
 # Email Templates
 
-Design reusable templates for transactional and marketing emails.
+Edit system email templates (subject/body) while keeping slugs and placeholders locked.
 
-## Features
-- Layouts + templates with variables
-- Preview and test send
-- Multi-language support
+## Form highlights
+- View template name and slug (read-only)
+- Update subject line and rich-text body
+- Review available placeholder variables (read-only)
 
-## Workflow
-1. Define a base [Email Layout](/modules/communication/email-layouts)
-2. Create a template and insert variables
-3. Test send and activate
+## Table tools
+- Searchable name and copyable slug
+- Filter templates by active/inactive flag
+- Preview action opens rendered output in a new tab

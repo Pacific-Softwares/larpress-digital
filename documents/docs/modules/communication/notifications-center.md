@@ -1,8 +1,13 @@
 # Notifications Center
 
-Send and manage in-app and email notifications.
+Let each user control which channels they receive system notifications through.
 
 ## Features
-- Broadcast to users or roles
-- Database notifications with read/unread
-- Delivery channels: mail, database, broadcast
+- Auto-seeds notification preferences (e.g., `contact_us`) per user
+- Toggle Email, SMS, and Web Notification channels individually
+- Saves changes immediately and confirms via toast notification
+
+## Notes
+- Preferences are stored per permission name for the signed-in user
+- Web notifications correspond to in-app/bell alerts
+- Ensure related permissions exist before exposing new toggles
