@@ -1,4 +1,3 @@
-# Modules (System)
 # Modules Introduction
 
 Modules are self-contained Laravel packages that extend LaraPressDigital functionality. They allow you to add features without modifying core code.
@@ -18,7 +17,7 @@ Modules in LaraPressDigital are:
 A typical module structure:
 
 ```
-modules/Blog/
+modules/{moduleSlug}/
 ├── Config/
 │   └── config.php
 ├── Database/
@@ -28,209 +27,111 @@ modules/Blog/
 │   ├── Controllers/
 │   ├── Middleware/
 │   └── Requests/
+├── Filament/
 ├── Models/
 ├── Providers/
-│   └── BlogServiceProvider.php
+│   └── {moduleSlug}ModuleRegisterServiceProvider.php
 ├── Resources/
 │   ├── views/
-│   └── lang/
 ├── Routes/
 │   ├── web.php
 │   ├── api.php
 │   └── admin.php
-├── Assets/
+├── assets/
 │   ├── js/
 │   └── css/
-├── Tests/
-├── composer.json
+├── Installer.json
+├── README.md
 └── module.json
 ```
 
-## Module Types
+### Download Sample Module
 
-### 1. Feature Modules
-Add new functionality:
-- Blog system
-- E-commerce
-- Forums
-- Events calendar
 
-### 2. Integration Modules
-Connect external services:
-- Payment gateways
-- Social media
-- Analytics
-- Email services
+### Use the Starter (Recommended)
 
-### 3. Admin Modules
-Extend admin panel:
-- Custom dashboards
-- Reports
-- Tools
-- Widgets
+1. Navigate to **System** → **Modules** in the admin panel.
+2. Click **Download Sample Module**. This downloads a ZIP containing the scaffolded module.
+3. Extract the ZIP locally to inspect the starter structure.
+4. Rename the extracted folder to match your module slug (lowercase letters, numbers, hyphen, underscore). This slug should stay consistent with the `slug` you define in `module.json`.
+5. Open the `module.json` manifest at the module root and update the metadata: `name`, `slug`, `version`, `description`, `author`, and any other values your module needs.
+   - Keep the slug slugged using `/^[a-z0-9\-_]+$/` so the installer and CLI tooling can resolve it.
+6. Customize the module:
+   - Add controllers, routes, views, jobs, listeners, commands, config, migrations, and seeders.
+   - Update `Providers/*ServiceProvider.php` to register bindings, hooks, and assets.
+   - Modify `Installer.json` to script automated tasks like publishing assets, copying stubs, or seeding configuration.
+7. When you are ready, re-compress the module directory into a ZIP file.
+8. Return to **System** → **Modules**, click **Upload Module**, select your ZIP, and confirm.
+9. After upload, the module will appear in the list—click **Activate** (or **Enable**) to turn it on.
+10. During activation the installer will register service providers, run migrations, publish assets, and execute any tasks you defined in `Installer.json`.
 
-### 4. Theme Modules
-UI components and themes:
-- Page builders
-- Widgets
-- Templates
-- Components
 
-## Installing Modules
-
-### Via Admin Panel
-
-1. Go to **System** → **Modules**
-2. Click **Browse Modules**
-3. Find desired module
-4. Click **Install**
-5. **Activate** the module
-
-### Via ZIP Upload
-
-1. Go to **System** → **Modules**
-2. Click **Upload Module**
-3. Select ZIP file
-4. Click **Install**
-5. **Activate** when ready
-
-### Via Command Line
-
-```bash
-# Install from directory
-php artisan module:install /path/to/module
-
-# Install from GitHub
-php artisan module:install vendor/module-name
-
-# Install from ZIP
-php artisan module:install module.zip
-```
-
-## Managing Modules
-
-### Activate/Deactivate
-
-```bash
-# Activate module
-php artisan module:enable Blog
-
-# Deactivate module
-php artisan module:disable Blog
-```
-
-### Update Module
-
-```bash
-# Update specific module
-php artisan module:update Blog
-
-# Update all modules
-php artisan module:update-all
-```
-
-### Remove Module
-
-```bash
-# Remove module (keeps data)
-php artisan module:remove Blog
-
-# Remove with data
-php artisan module:remove Blog --purge
-```
-
-## Module Configuration
+### Module Configuration (`module.json`)
 
 Each module has a `module.json` file:
 
 ```json
 {
-  "name": "Blog",
-  "alias": "blog",
-  "description": "Full-featured blog module",
-  "version": "1.0.0",
-  "author": "Your Name",
-  "email": "your@email.com",
-  "homepage": "https://example.com",
-  "keywords": ["blog", "posts", "articles"],
-  "active": true,
-  "order": 1,
-  "providers": [
-    "Modules\\Blog\\Providers\\BlogServiceProvider"
-  ],
-  "files": [],
-  "requires": {
-    "LaraPressDigital": "^1.0",
-    "php": "^8.1"
-  },
-  "autoload": {
-    "psr-4": {
-      "Modules\\Blog\\": ""
+    "name": "Demo Module",
+    "slug": "demo",
+    "version": "1.0.0",
+    "description": "A comprehensive demo module with categories, tags, and SEO features",
+    "author": "Your Name",
+    "email": "your@email.com",
+    "homepage": "https://yourwebsite.com",
+    "dependencies": {
+        "php": ">=8.1",
+        "laravel/framework": ">=10.0"
+    },
+    "settings": {
+        "posts_per_page": 10,
+        "enable_comments": true,
+        "enable_categories": true,
+        "enable_tags": true
     }
-  }
 }
 ```
 
-## Module Dependencies
+Required fields: `name`, `slug`, `version`. The `slug` must match `/^[a-z0-9\-_]+$/` and should match your folder name. Optional fields include `description`, `author`, `keywords`, `order`, `files`, `requires`, and `providers`. Use these to describe dependencies, wiring, and autoload behaviour for your module.
 
-### Specifying Dependencies
 
-In `composer.json`:
 
-```json
-{
-  "require": {
-    "LaraPressDigital/core": "^1.0",
-    "modules/media": "^1.0",
-    "guzzlehttp/guzzle": "^7.0"
-  }
-}
-```
+## Notes on iterative development and testing
 
-### Module Requirements
+- Every time you change module code locally, create a new ZIP of the module folder and upload it to update the module in the portal. Uploading a ZIP whose slug matches an existing module replaces it (unless that module is marked `protected`).
 
-In `module.json`:
+- For rapid iteration, modify files directly inside `modules/{ModuleName}/`. Example workflow:
 
-```json
-{
-  "requires": {
-    "LaraPressDigital": "^1.0",
-    "modules": {
-      "Media": "^1.0",
-      "User": "^1.0"
-    }
-  }
-}
-```
+  1. Suppose you uploaded a module with slug `demo`.
+  2. Tweak controllers, routes, views, or resources under `modules/demo/*` to test immediately.
+  3. Once satisfied, copy those updates back into your source module folder, re-zip, and upload again to keep the distributed package in sync.
 
-## Module Hooks
+**Important:** Runtime modules load from `modules/{ModuleName}/`. Keep a version-controlled source copy so your installer ZIP matches production.
 
-Modules can hook into LaraPressDigital events:
 
-```php
-// In ModuleServiceProvider
-public function boot()
-{
-    // Register event listeners
-    Event::listen('LaraPressDigital.post.created', function($post) {
-        // Handle post created
-    });
-    
-    // Add admin menu items
-    $this->app['LaraPressDigital.admin.menu']->add([
-        'label' => 'Blog',
-        'route' => 'admin.blog.index',
-        'icon' => 'heroicon-o-book-open',
-    ]);
-}
-```
+Notes:
 
-## Available Modules
+- Uploading a ZIP with the same module `slug` updates it in place (with backup, cache clear, and asset republish).
 
-### Official Modules
 
-- **Blog** - Full-featured blog system
-- **Forms** - Advanced form builder
-- **SEO** - SEO optimization tools
-- **Analytics** - Site analytics
-- **Newsletter** - Email marketing
+## Module Development
+
+Leverage the starter structure as a baseline, extending it with controllers, routes, models, Filament resources, and service providers. Keep business logic encapsulated within the module so it remains portable across projects.
+
+## How Upload & Install Work (Under the Hood)
+
+When you upload a module ZIP, LaraPressDigital follows these steps:
+
+1. Validate the uploaded file and extract it into a temporary directory.
+2. Locate the module manifest (`module.json`) and optional `Installer.json` at the root or first nested directory.
+3. Validate the required metadata (`name`, `slug`, `version`) and ensure the slug matches the expected pattern.
+4. If a module with the same slug already exists:
+   - Abort installation if the module is marked `protected`, keeping the current copy intact.
+   - Otherwise back up the existing module, replace its files, republish assets, and clear caches.
+5. For brand-new modules, copy the extracted files into `modules/{StudlyModuleName}/` and register them with the module registry.
+6. Execute installer tasks:
+   - Register service providers, routes, console commands, menus, permissions, and hooks exposed by the module.
+   - Run migrations and seeders discovered inside the module or declared in `Installer.json`.
+   - Publish assets to `public/modules/{slug}` or other targeted paths.
+   - Run any additional installer commands defined in `Installer.json` (copy stubs, sync config, schedule jobs, etc.).
+7. Update the module status so it can be enabled/disabled via the admin panel or CLI (`module:enable`, `module:disable`).
